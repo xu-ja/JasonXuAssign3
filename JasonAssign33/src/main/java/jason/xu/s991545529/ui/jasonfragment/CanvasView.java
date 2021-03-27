@@ -102,4 +102,9 @@ public class CanvasView extends View {
         }
         return true;
     }
+
+    public void clearCanvas()
+    {
+        mCanvas.drawColor(Color.TRANSPARENT);
+    }
 }

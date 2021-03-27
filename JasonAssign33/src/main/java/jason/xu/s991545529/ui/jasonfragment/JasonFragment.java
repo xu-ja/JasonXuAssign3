@@ -27,7 +27,7 @@ public class JasonFragment extends Fragment {
                 textView.setText(s);
             }
         });*/
-        //canvas = (CanvasView) getView().findViewById(R.id.jasonCanvasView);
+        canvas = (CanvasView) root.findViewById(R.id.jasonCanvasView);
         return root;
     }
 }

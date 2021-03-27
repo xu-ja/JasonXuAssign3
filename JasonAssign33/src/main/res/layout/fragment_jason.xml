@@ -46,4 +46,16 @@
         app:layout_constraintTop_toBottomOf="@+id/jasonTextHome"
         app:layout_constraintVertical_bias="1.0"/>
 
+    <Button
+        android:id="@+id/jasonButtonClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="656dp"
+        android:text="@string/button_clear"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jasonTextHome" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
