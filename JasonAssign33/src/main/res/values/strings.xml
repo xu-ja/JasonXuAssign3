@@ -7,4 +7,5 @@
     <string name="alert_dialog_exit">Do you want to exit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="androidbot_imageview">"Android Bot"</string>
 </resources>
