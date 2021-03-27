@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -28,6 +29,15 @@ public class JasonFragment extends Fragment {
             }
         });*/
         canvas = (CanvasView) root.findViewById(R.id.jasonCanvasView);
+
+        Button clearButton = (Button) root.findViewById(R.id.jasonButtonClear);
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                canvas.clearCanvas();
+            }
+        });
         return root;
     }
 }
