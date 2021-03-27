@@ -7,6 +7,7 @@
     android:background="#FFBEBE"
     tools:context=".ui.jasonfragment.JasonFragment">
 
+
     <TextView
         android:id="@+id/jasonTextHome"
         android:layout_width="match_parent"
@@ -29,18 +30,18 @@
         android:layout_height="0dp"
         android:contentDescription="@string/androidbot_imageview"
         android:src="@drawable/androidbot"
-        app:layout_constraintBottom_toTopOf="@+id/jasonButtonClear"
+        app:layout_constraintBottom_toTopOf="@id/jasonButtonUpdatePen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jasonTextHome"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <jason.xu.s991545529.ui.jasonfragment.CanvasView
         android:id="@+id/jasonCanvasView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/jasonButtonClear"
+        app:layout_constraintBottom_toTopOf="@id/jasonButtonUpdatePen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,13 +52,90 @@
         android:id="@+id/jasonButtonClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="656dp"
         android:text="@string/button_clear"
         android:textColor="#FF0000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/jasonTextHome"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioGroup
+        android:id="@+id/jasonRadioGroupColours"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jasonTextHome">
+
+        <RadioButton
+            android:id="@+id/jasonRadioButtonRed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:text="@string/red"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="27dp" />
+
+        <RadioButton
+            android:id="@+id/jasonRadioButtonBlue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:text="@string/blue"
+            tools:layout_editor_absoluteY="73dp" />
+        <RadioButton
+            android:id="@+id/jasonRadioButtonYellow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/yellow"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="121dp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/jasonRadioGroupThickness"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jasonTextHome">
+
+        <RadioButton
+            android:id="@+id/jasonRadioButtonThick1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:text="@string/thin"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="27dp" />
+        <RadioButton
+            android:id="@+id/jasonRadioButtonThick2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/medium"
+            tools:layout_editor_absoluteY="73dp" />
+        <RadioButton
+            android:id="@+id/jasonRadioButtonThick3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/thick"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="121dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/jasonButtonUpdatePen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="608dp"
+        android:text="@string/button_updatePen"
+        app:layout_constraintBottom_toTopOf="@+id/jasonButtonClear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jasonTextHome"
         app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,19 @@
 <!-- Jason Xu 991545529 -->
 <resources>
     <string name="app_name">Jason Xu 991545529</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">1st Tab</string>
+    <string name="title_dashboard">2nd Tab</string>
+    <string name="title_notifications">3rd Tab</string>
     <string name="alert_dialog_exit">Do you want to exit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="androidbot_imageview">Android Bot</string>
     <string name="button_clear">Clear Canvas</string>
+    <string name="button_updatePen">Update Pen</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+    <string name="thin">Thin</string>
+    <string name="medium">Medium</string>
+    <string name="thick">Thick</string>
 </resources>

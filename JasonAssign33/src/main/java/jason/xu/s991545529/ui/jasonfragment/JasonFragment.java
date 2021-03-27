@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.RadioGroup;
+import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -31,13 +33,27 @@ public class JasonFragment extends Fragment {
         canvas = (CanvasView) root.findViewById(R.id.jasonCanvasView);
 
         Button clearButton = (Button) root.findViewById(R.id.jasonButtonClear);
-
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 canvas.clearCanvas();
             }
         });
+
+        RadioGroup colours = (RadioGroup) root.findViewById(R.id.jasonRadioGroupColours);
+        RadioGroup thickness = (RadioGroup) root.findViewById(R.id.jasonRadioGroupThickness);
+        Button updatePenButton = (Button) root.findViewById(R.id.jasonButtonUpdatePen);
+        updatePenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedColourId = colours.getCheckedRadioButtonId();
+                RadioButton colour = (RadioButton) root.findViewById(selectedColourId);
+                int selectedThicknessId = thickness.getCheckedRadioButtonId();
+                RadioButton howThick = (RadioButton) root.findViewById(selectedThicknessId);
+                canvas.updatePen(colour.getText(), howThick.getText());
+            }
+        });
+
         return root;
     }
 }

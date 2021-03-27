@@ -10,6 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import jason.xu.s991545529.R;
+
 public class CanvasView extends View {
 
     private static final float TOLERANCE = 5;
@@ -35,7 +37,7 @@ public class CanvasView extends View {
         mPaint.setColor(Color.BLACK);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeWidth(4f);
+        mPaint.setStrokeWidth(5);
     }
 
     // override onSizeChanged
@@ -106,5 +108,28 @@ public class CanvasView extends View {
     {
         mPath.reset();
         this.invalidate();
+    }
+
+    public void updatePen(CharSequence colour, CharSequence thickness) {
+        mPaint = new Paint();
+
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        mPaint.setAntiAlias(true);
+        mPaint.setStyle(Paint.Style.STROKE);
+
+        if (colour.equals(context.getString(R.string.red))) {
+            mPaint.setColor(Color.RED);
+        } else if (colour.equals(context.getString(R.string.blue))) {
+            mPaint.setColor(Color.BLUE);
+        } else if (colour.equals(context.getString(R.string.yellow))) {
+            mPaint.setColor(Color.YELLOW);
+        }
+        if (thickness.equals(context.getString(R.string.thin))) {
+            mPaint.setStrokeWidth(5);
+        } else if (thickness.equals(context.getString(R.string.medium))) {
+            mPaint.setStrokeWidth(15);
+        } else if (thickness.equals(context.getString(R.string.thick))) {
+            mPaint.setStrokeWidth(30);
+        }
     }
 }
