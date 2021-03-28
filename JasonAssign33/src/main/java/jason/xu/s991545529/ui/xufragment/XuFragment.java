@@ -6,12 +6,18 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -31,19 +37,12 @@ public class XuFragment extends Fragment {
 
     private static final int PERMISSION_REQUEST_CODE = 123;
     View root;
+    AnimationDrawable mframeAnimation;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-/*        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);*/
+
         root = inflater.inflate(R.layout.fragment_xu, container, false);
-/*        final TextView textView = root.findViewById(R.id.jasonTextDashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });*/
 
         Button cameraButton = (Button) root.findViewById(R.id.jasonButtonService);
         cameraButton.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +56,55 @@ public class XuFragment extends Fragment {
                 }
             }
         });
+
+        RadioGroup animationSpeeds = (RadioGroup) root.findViewById(R.id.jasonRadioGroupAnimationSpeed);
+        Button animationButton = (Button) root.findViewById(R.id.jasonButtonStartAnimation);
+        animationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedSpeedId = animationSpeeds.getCheckedRadioButtonId();
+                RadioButton speed = (RadioButton) root.findViewById(selectedSpeedId);
+                int duration = animationSpeed(speed.getText());
+                startAnimation(duration);
+            }
+        });
         return root;
+    }
+
+    private int animationSpeed(CharSequence speed) {
+        if (speed.equals(root.getContext().getString(R.string.speed1))) {
+            return 300;
+        } else if (speed.equals(root.getContext().getString(R.string.speed2))) {
+            return 400;
+        } else if (speed.equals(root.getContext().getString(R.string.speed3))) {
+            return 500;
+        } else if (speed.equals(root.getContext().getString(R.string.speed4))) {
+            return 600;
+        } else {
+            return 300;
+        }
+    }
+
+    private void startAnimation(int duration) {
+        ImageView img = (ImageView) root.findViewById(R.id.jasonImageViewAnimation);
+
+        BitmapDrawable frame1 = (BitmapDrawable) root.getContext().getDrawable(R.drawable.img1);
+        BitmapDrawable frame2 = (BitmapDrawable) root.getContext().getDrawable(R.drawable.img2);
+        BitmapDrawable frame3 = (BitmapDrawable) root.getContext().getDrawable(R.drawable.img3);
+        BitmapDrawable frame4 = (BitmapDrawable) root.getContext().getDrawable(R.drawable.img4);
+        BitmapDrawable frame5 = (BitmapDrawable) root.getContext().getDrawable(R.drawable.img5);
+
+        mframeAnimation = new AnimationDrawable();
+        mframeAnimation.setOneShot(false);
+        mframeAnimation.addFrame(frame1, duration);
+        mframeAnimation.addFrame(frame2, duration);
+        mframeAnimation.addFrame(frame3, duration);
+        mframeAnimation.addFrame(frame4, duration);
+        mframeAnimation.addFrame(frame5, duration);
+
+        img.setBackground(mframeAnimation);
+        mframeAnimation.setVisible(true,true);
+        mframeAnimation.start();
     }
 
     private void requestPermission() {
