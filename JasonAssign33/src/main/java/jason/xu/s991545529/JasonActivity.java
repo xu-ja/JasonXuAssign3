@@ -16,7 +16,7 @@ import androidx.navigation.ui.NavigationUI;
 Jason Xu 991545529
  */
 
-public class JasonActivity extends AppCompatActivity {
+public class  JasonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

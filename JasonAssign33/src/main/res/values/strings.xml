@@ -7,6 +7,7 @@
     <string name="alert_dialog_exit">Do you want to exit?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+
     <string name="androidbot_imageview">Android Bot</string>
     <string name="button_clear">Clear Canvas</string>
     <string name="button_updatePen">Update Pen</string>
@@ -16,4 +17,7 @@
     <string name="thin">Thin</string>
     <string name="medium">Medium</string>
     <string name="thick">Thick</string>
+
+    <string name="button_service">Launch Camera</string>
+    <string name="permission_denied">Permission Denied</string>
 </resources>
