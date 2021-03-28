@@ -7,12 +7,12 @@
     <string name="alert_dialog_exit">Voulez-vous sortir?</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
-    Clear Canvas
-    <string name="androidbot_imageview">Robot Android</string>YellowThinMedium
-    <string name="button_clear">Toile Transparente</string>Change PenPermission Denied
-    <string name="button_updatePen">Changer de Stylo</string>RedBlueLaunch Camera
+
+    <string name="androidbot_imageview">Robot Android</string>
+    <string name="button_clear">Toile Transparente</string>
+    <string name="button_updatePen">Changer de Stylo</string>
     <string name="red">Rouge</string>
-    <string name="blue">Bleu</string>Speed 1
+    <string name="blue">Bleu</string>
     <string name="yellow">Jaune</string>
     <string name="thin">Mince</string>
     <string name="medium">Moyen</string>
