@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,20 +18,15 @@ import jason.xu.s991545529.R;
 
 public class S991545529Fragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_s991545529, container, false);
-        final TextView textView = root.findViewById(R.id.jasonTextNotifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        TextView firstName = (TextView) root.findViewById(R.id.jasonTextViewFirstName);
+
+        TextView lastName = (TextView) root.findViewById(R.id.jasonTextViewLastName);
+
         return root;
     }
 }

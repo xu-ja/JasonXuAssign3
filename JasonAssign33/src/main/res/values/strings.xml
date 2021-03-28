@@ -25,4 +25,7 @@
     <string name="speed3">Speed 3</string>
     <string name="speed4">Speed 4</string>
     <string name="start_animation">Start Animation</string>
+
+    <string name="first_name">Jason</string>
+    <string name="last_name">Xu</string>
 </resources>
