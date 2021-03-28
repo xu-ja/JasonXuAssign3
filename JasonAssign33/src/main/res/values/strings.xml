@@ -28,4 +28,6 @@
 
     <string name="first_name">Jason</string>
     <string name="last_name">Xu</string>
+    <string name="start_moon">Start Moon</string>
+    <string name="stop_moon">Stop Moon</string>
 </resources>
