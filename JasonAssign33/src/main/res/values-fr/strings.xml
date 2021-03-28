@@ -1,10 +1,33 @@
 <!-- Jason Xu 991545529 -->
 <resources>
     <string name="app_name">Jason Xu 991545529</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">1er Onglet</string>
+    <string name="title_dashboard">2e Onglet</string>
+    <string name="title_notifications">3e Onglet</string>
     <string name="alert_dialog_exit">Voulez-vous sortir?</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
+    Clear Canvas
+    <string name="androidbot_imageview">Robot Android</string>YellowThinMedium
+    <string name="button_clear">Toile Transparente</string>Change PenPermission Denied
+    <string name="button_updatePen">Changer de Stylo</string>RedBlueLaunch Camera
+    <string name="red">Rouge</string>
+    <string name="blue">Bleu</string>Speed 1
+    <string name="yellow">Jaune</string>
+    <string name="thin">Mince</string>
+    <string name="medium">Moyen</string>
+    <string name="thick">Épais</string>
+
+    <string name="button_service">Lancer la Caméra</string>
+    <string name="permission_denied">Permission Refusée</string>
+    <string name="speed1">Vitesse 1</string>
+    <string name="speed2">Vitesse 2</string>
+    <string name="speed3">Vitesse 3</string>
+    <string name="speed4">Vitesse 4</string>
+    <string name="start_animation">Lancer l\'animation</string>
+
+    <string name="first_name">Jason</string>
+    <string name="last_name">Xu</string>
+    <string name="start_moon">Démarrer la Lune</string>
+    <string name="stop_moon">Arrêter la Lune</string>
 </resources>
