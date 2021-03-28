@@ -106,17 +106,19 @@ public class CanvasView extends View {
 
     public void clearCanvas()
     {
+        // Clears canvas
         mPath.reset();
         this.invalidate();
     }
 
     public void updatePen(CharSequence colour, CharSequence thickness) {
+        // Creates new paint object
         mPaint = new Paint();
-
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setAntiAlias(true);
         mPaint.setStyle(Paint.Style.STROKE);
 
+        // Checks that parameters and sets paint object properties accordingly
         if (colour.equals(context.getString(R.string.red))) {
             mPaint.setColor(Color.RED);
         } else if (colour.equals(context.getString(R.string.blue))) {

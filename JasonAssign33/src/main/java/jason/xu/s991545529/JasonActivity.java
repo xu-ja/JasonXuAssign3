@@ -35,9 +35,12 @@ public class  JasonActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        // Alert dialog to send confirmation message for exiting application
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setMessage(getResources().getString(R.string.alert_dialog_exit));
+
+        // Exits application if yes is pressed
         builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -45,6 +48,8 @@ public class  JasonActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        // Stays on application if no is pressed
         builder.setNegativeButton(getResources().getString(R.string.no),new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

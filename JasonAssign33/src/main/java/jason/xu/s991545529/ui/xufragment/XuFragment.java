@@ -45,13 +45,16 @@ public class XuFragment extends Fragment {
         root = inflater.inflate(R.layout.fragment_xu, container, false);
 
         Button cameraButton = (Button) root.findViewById(R.id.jasonButtonService);
+        // Camera button to launch camera app
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // If camera permission is granted, open camera
                 if (ContextCompat.checkSelfPermission(root.getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivity(cameraIntent);
                 } else {
+                    // If camera permission is not granted, then request for permission
                     requestPermission();
                 }
             }
@@ -59,6 +62,7 @@ public class XuFragment extends Fragment {
 
         RadioGroup animationSpeeds = (RadioGroup) root.findViewById(R.id.jasonRadioGroupAnimationSpeed);
         Button animationButton = (Button) root.findViewById(R.id.jasonButtonStartAnimation);
+        // Button to check for animation speed selected in radio group
         animationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +90,7 @@ public class XuFragment extends Fragment {
     }
 
     private void startAnimation(int duration) {
+        // Sets animation through 5 random images.
         ImageView img = (ImageView) root.findViewById(R.id.jasonImageViewAnimation);
 
         BitmapDrawable frame1 = (BitmapDrawable) root.getContext().getDrawable(R.drawable.img1);
@@ -108,9 +113,11 @@ public class XuFragment extends Fragment {
     }
 
     private void requestPermission() {
+        // Request for camera permission
         requestPermissions(new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST_CODE);
     }
 
+    // Alert dialog for confirming camera permission
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(root.getContext())
                 .setMessage(message)
@@ -124,12 +131,16 @@ public class XuFragment extends Fragment {
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case PERMISSION_REQUEST_CODE:
+                // Open camera if permission is granted
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivity(cameraIntent);
                 } else {
+                    // Display snackbar if camera permission is denied
                     Snackbar permissionDenied = Snackbar.make(root, getResources().getString(R.string.permission_denied), Snackbar.LENGTH_LONG);
                     permissionDenied.show();
+
+                    // Request for camera permission
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         if (ContextCompat.checkSelfPermission(root.getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                             showMessageOKCancel("You need to allow access permissions",

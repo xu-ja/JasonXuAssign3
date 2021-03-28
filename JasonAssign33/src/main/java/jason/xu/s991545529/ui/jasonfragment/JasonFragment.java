@@ -22,7 +22,6 @@ public class JasonFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_jason, container, false);
-        //final TextView textView = root.findViewById(R.id.jasonTextHome);
 
         canvas = (CanvasView) root.findViewById(R.id.jasonCanvasView);
 
@@ -37,6 +36,8 @@ public class JasonFragment extends Fragment {
         RadioGroup colours = (RadioGroup) root.findViewById(R.id.jasonRadioGroupColours);
         RadioGroup thickness = (RadioGroup) root.findViewById(R.id.jasonRadioGroupThickness);
         Button updatePenButton = (Button) root.findViewById(R.id.jasonButtonUpdatePen);
+
+        // Checks radio button selections for line colour and thickness
         updatePenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
